@@ -20,6 +20,17 @@ Esta biblioteca puede instalarse vía composer añadiendo esto a tu fichero comp
       ]
     }
     
+__NOTA__: Para el correcto functionamiento de la bibioteca deben estar instaladas en el sistemas las bibliotecas gettext y los correspondientes paquetes de locales (para cada uno de los idiomas a los que se quiera dar soporte). Por ejemplo, en el caso de la Ubuntu habría que:
+
+1. Instalar gettext: 
+    
+        apt-get install gettext
+
+2. Instalar los packs de idiomas que necesitemos, por ejemplo para el español: 
+        
+        apt-get install language-pack-es
+
+    
 # Ejemplos del uso del traductor:
 
 ## Traductor tirando de fichero csv
