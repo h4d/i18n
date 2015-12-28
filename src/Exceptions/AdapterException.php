@@ -6,11 +6,12 @@ namespace H4D\I18n\Exceptions;
 
 class AdapterException extends \Exception
 {
-    const BASE_CODE                = 0;
-    const FILE_OPEN_ERROR_CODE     = 1;
-    const DIR_ERROR_CODE           = 2;
-    const FILE_CREATION_ERROR_CODE = 3;
-    const FILE_WRITE_ERROR_CODE    = 4;
+    const BASE_CODE                         = 0;
+    const FILE_OPEN_ERROR_CODE              = 1;
+    const DIR_ERROR_CODE                    = 2;
+    const FILE_CREATION_ERROR_CODE          = 3;
+    const FILE_WRITE_ERROR_CODE             = 4;
+    const GETTEXT_EXTENSION_NOT_LOADED_CODE = 4;
 
     /**
      * @param string $file
@@ -74,5 +75,14 @@ class AdapterException extends \Exception
         return new self(sprintf('Log file for untranslated strings is not properly setted! ' .
                                 'Use OPTION_UNTRANSLATED_STRING_LOG_FILE and set a valid file path.'),
                         self::BASE_CODE + self::DIR_ERROR_CODE);
+    }
+
+    /**
+     * @return AdapterException
+     */
+    public static function gettextExtensionNotLoaded()
+    {
+        return new self(sprintf('Gettext extension is not loaded!'),
+                        self::BASE_CODE + self::GETTEXT_EXTENSION_NOT_LOADED_CODE);
     }
 }

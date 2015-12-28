@@ -32,6 +32,11 @@ class GettextAdapter extends AbstractAdapter
      */
     protected function init()
     {
+        // Check for gettext extension
+        if (!extension_loaded('gettext'))
+        {
+            throw AdapterException::gettextExtensionNotLoaded();
+        }
         $this->translationsDomain = $this->getOption(self::OPTION_TRANSLATIONS_DOMAIN,
                                                              $this->translationsDomain);
         $translationDirectory = $this->getOption(self::OPTION_TRANSLATIONS_DIRECTORY);
