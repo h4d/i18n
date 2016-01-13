@@ -5,7 +5,7 @@ namespace H4D\I18n;
 
 use H4D\I18n\Translator\AdapterInterface;
 
-class Translator
+class Translator implements TranslatorInterface
 {
     /**
      * @var AdapterInterface
