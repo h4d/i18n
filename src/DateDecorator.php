@@ -160,4 +160,26 @@ class DateDecorator implements DateDecoratorInterface
         return $this->getFormattedDate($date, static::FORMAT_ALIAS_DATETIME, $locale);
     }
 
+    /**
+     * @param \DateTime $date
+     * @param string $locale
+     *
+     * @return string
+     */
+    public function getDateTimeAndTimeZone(\DateTime $date, $locale = '')
+    {
+        return $this->getFormattedDate($date, static::FORMAT_ALIAS_DATETIME_AND_TIMEZONE, $locale);
+    }
+
+    /**
+     * @param \DateTime $date
+     * @param string $locale
+     *
+     * @return string
+     */
+    public function getTimeZone(\DateTime $date, $locale = '')
+    {
+        return $this->getFormattedDate($date, static::FORMAT_ALIAS_TIMEZONE, $locale);
+    }
+
 }
