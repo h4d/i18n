@@ -12,9 +12,9 @@ trait DateDecoratorAwareTrait
     protected $dateDecorator;
 
     /**
-     * @param TranslatorInterface $dateDecorator
+     * @param DateDecoratorInterface $dateDecorator
      */
-    public function setDateDecorator(TranslatorInterface $dateDecorator)
+    public function setDateDecorator(DateDecoratorInterface $dateDecorator)
     {
         $this->dateDecorator = $dateDecorator;
     }
