@@ -20,22 +20,26 @@ class DateDecorator implements DateDecoratorInterface
     /**
      * DateDecorator constructor.
      *
-     * @param string $formatsFile
+     * @param string $dateFormatsFile
      * @param string $defaultLocale
      *
      * @throws DateDecoratorException
      */
-    public function __construct($formatsFile, $defaultLocale = self::DEFAULT_LOCALE)
+    public function __construct($dateFormatsFile = '', $defaultLocale = self::DEFAULT_LOCALE)
     {
         $this->defaultLocale = $defaultLocale;
-        if (!is_file($formatsFile) || !is_readable($formatsFile))
+        $dateFormatsFile = ('' == $dateFormatsFile)
+            ? realpath(__DIR__ .'/../samples/date-formats.ini')
+            : $dateFormatsFile;
+        if (!is_file($dateFormatsFile) || !is_readable($dateFormatsFile))
         {
-            throw DateDecoratorException::fileOpenError($formatsFile);
+            throw DateDecoratorException::fileOpenError($dateFormatsFile);
         }
-        $this->config = parse_ini_file($formatsFile, true);
+
+        $this->config = @parse_ini_file($dateFormatsFile, true);
         if (false === $this->config)
         {
-            throw DateDecoratorException::fileReadError($formatsFile);
+            throw DateDecoratorException::fileReadError($dateFormatsFile);
         }
     }
 
