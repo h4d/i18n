@@ -85,7 +85,7 @@ class DateDecorator implements DateDecoratorInterface
      *
      * @return string
      */
-    protected function formatDateTime(\DateTime $date, $format)
+    protected function formatDate(\DateTime $date, $format)
     {
         return $date->format($format);
     }
@@ -102,7 +102,7 @@ class DateDecorator implements DateDecoratorInterface
         $locale = ('' != $locale) ? $locale : $this->defaultLocale;
         $format = $this->getFormat($locale, $formatAlias);
 
-        return $this->formatDateTime($date, $format);
+        return $this->formatDate($date, $format);
     }
 
     /**
@@ -133,7 +133,7 @@ class DateDecorator implements DateDecoratorInterface
      *
      * @return string
      */
-    public function getShortTime(\DateTime $date, $locale = '')
+    public function getTimeShort(\DateTime $date, $locale = '')
     {
         return $this->getFormattedDate($date, static::FORMAT_ALIAS_SHORTTIME, $locale);
     }
@@ -158,28 +158,6 @@ class DateDecorator implements DateDecoratorInterface
     public function getDateTime(\DateTime $date, $locale = '')
     {
         return $this->getFormattedDate($date, static::FORMAT_ALIAS_DATETIME, $locale);
-    }
-
-    /**
-     * @param \DateTime $date
-     * @param string $locale
-     *
-     * @return string
-     */
-    public function getDateTimeAndTimeZone(\DateTime $date, $locale = '')
-    {
-        return $this->getFormattedDate($date, static::FORMAT_ALIAS_DATETIME_AND_TIMEZONE, $locale);
-    }
-
-    /**
-     * @param \DateTime $date
-     * @param string $locale
-     *
-     * @return string
-     */
-    public function getTimeZone(\DateTime $date, $locale = '')
-    {
-        return $this->getFormattedDate($date, static::FORMAT_ALIAS_TIMEZONE, $locale);
     }
 
 }
