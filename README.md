@@ -67,11 +67,12 @@ Para "capturar" en un fichero las cadenas que no tienen traducción disponible s
 - __OPTION_LOG_UNTRANSLATED_STRING__ (bool): true=>se capturan del cadenas que no tienen traducción, false=>no se capturan las cadenas sin traducción.
 - __OPTION_UNTRANSLATED_STRING_LOG_FILE__ (string): Ruta del fichero en la que se guardarán las cadenas sin traducción.
 
-
-    // New CSV adaptor instance (CSV file: ./data/es_ES.csv) + capture untranslated strings to ./untranslated.txt
-    $adapter = new CsvAdapter('es_ES', [CsvAdapter::OPTION_TRANSLATIONS_DIRECTORY=>__DIR__.'/data',
-                                        CsvAdapter::OPTION_LOG_UNTRANSLATED_STRING=>true,
-                                        CsvAdapter::OPTION_UNTRANSLATED_STRING_LOG_FILE=>__DIR__.'/untranslated.txt']);
+```
+// New CSV adaptor instance (CSV file: ./data/es_ES.csv) + capture untranslated strings to ./untranslated.txt
+$adapter = new CsvAdapter('es_ES', [CsvAdapter::OPTION_TRANSLATIONS_DIRECTORY=>__DIR__.'/data',
+                                    CsvAdapter::OPTION_LOG_UNTRANSLATED_STRING=>true,
+                                    CsvAdapter::OPTION_UNTRANSLATED_STRING_LOG_FILE=>__DIR__.'/untranslated.txt']);
+```
 
 ## Traductor tirando de gettext
 
@@ -119,7 +120,7 @@ Los directorios de idiomas deben seguir el formato _ll_cc_ donde _ll_ es un cód
         printf('EXCEPTION!!: %s'.PHP_EOL, $e->getMessage());
     }
 
-Al igual que con el adaptador de ficheros CSV se podrían capturar las cadenas son traducción empleando las opciones __OPTION_LOG_UNTRANSLATED_STRING__ y __OPTION_UNTRANSLATED_STRING_LOG_FILE__.
+Al igual que con el adaptador de ficheros CSV se podrían capturar las cadenas sin traducción empleando las opciones __OPTION_LOG_UNTRANSLATED_STRING__ y __OPTION_UNTRANSLATED_STRING_LOG_FILE__.
 
     $adapter = new GettextAdapter('es_ES.UTF-8',
                                   [GettextAdapter::OPTION_TRANSLATIONS_DIRECTORY => __DIR__ . '/data',
