@@ -17,12 +17,16 @@ try
     $translator = new Translator($adapter);
 
     // Translate a simple string
-    $translated = $translator->translate('Simple string.');
-    printf('Translated string: %s' . PHP_EOL, $translated);
+    $string = 'Simple string.';
+    $translated = $translator->translate($string);
+    printf('Original string: %s' . PHP_EOL, $string);
+    printf('Translated string: %s' . PHP_EOL . PHP_EOL, $translated);
 
     // Translate a string with vars
-    $translated = $translator->translate('Hello %s!', 'Pakito');
-    printf('Translated string: %s' . PHP_EOL, $translated);
+    $string = 'Hello %s!';
+    $translated = $translator->translate($string, 'world');
+    printf('Original string: %s' . PHP_EOL, $string);
+    printf('Translated string: %s' . PHP_EOL . PHP_EOL, $translated);
 
 }
 catch (\Exception $e)
@@ -45,12 +49,16 @@ try
     $translator = new Translator($adapter);
 
     // Translate a simple string
-    $translated = $translator->translate('Simple string.');
-    printf('Translated string: %s' . PHP_EOL, $translated);
+    $string = 'Simple string.';
+    $translated = $translator->translate($string);
+    printf('Original string: %s' . PHP_EOL, $string);
+    printf('Translated string: %s' . PHP_EOL . PHP_EOL, $translated);
 
     // Translate a string with vars
-    $translated = $translator->translate('Hello %s!', 'Pakito');
-    printf('Translated string: %s' . PHP_EOL, $translated);
+    $string = 'Hello %s!';
+    $translated = $translator->translate($string, 'world');
+    printf('Original string: %s' . PHP_EOL, $string);
+    printf('Translated string: %s' . PHP_EOL . PHP_EOL, $translated);
 
 }
 catch (\Exception $e)
