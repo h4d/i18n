@@ -29,7 +29,7 @@ class DateDecorator implements DateDecoratorInterface
     {
         $this->defaultLocale = $defaultLocale;
         $dateFormatsFile = ('' == $dateFormatsFile)
-            ? realpath(__DIR__ .'/../samples/date-formats.ini')
+            ? realpath(__DIR__ . '/../defaults/date-formats.ini')
             : $dateFormatsFile;
         if (!is_file($dateFormatsFile) || !is_readable($dateFormatsFile))
         {
