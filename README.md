@@ -4,21 +4,9 @@ Es un biblioteca básica para la traducción de cadenas y/o cualquier otra cosa 
 
 # Instalación vía composer:
 
-Esta biblioteca puede instalarse vía composer añadiendo esto a tu fichero composer.json:
+Esta biblioteca puede instalarse vía composer ejecutando:
 
-    {
-      "minimum-stability": "dev",
-      "prefer-stable": true,
-      "require": {
-        "h4d/i18n": "^1.0"
-      },
-      "repositories": [
-        {
-          "type": "vcs",
-          "url": "git@dev.edusalguero.com:h4d/i18n.git"
-        }
-      ]
-    }
+    $ composer require h4d/i18n
     
 __NOTA__: Para el correcto functionamiento de la bibioteca deben estar instaladas en el sistemas las bibliotecas gettext y los correspondientes paquetes de locales (para cada uno de los idiomas a los que se quiera dar soporte). Por ejemplo, en el caso de la Ubuntu habría que:
 
