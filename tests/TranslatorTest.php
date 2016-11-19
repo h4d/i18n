@@ -7,8 +7,6 @@ use H4D\I18n\Translator\Adapters\CsvAdapter;
 use H4D\I18n\Translator\Adapters\GettextAdapter;
 use H4D\I18n\Translator\Adapters\NullAdapter;
 
-require_once __DIR__ . '/PrivateAccessTrait.php';
-
 class TranslatorTest extends \PHPUnit_Framework_TestCase
 {
     public function test_translate_withNullAdapter_returnsOriginalString()
