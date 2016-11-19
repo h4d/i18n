@@ -20,6 +20,9 @@
   "repositories": [
   ],
   "autoload": {
-    "psr-4": {"H4D\\I18n\\": "src"}
+    "psr-4": {
+      "H4D\\I18n\\": "src",
+      "H4D\\I18n\\Tests\\Unit\\": "tests"
+    }
   }
 }
