@@ -16,6 +16,14 @@ class NullTranslator implements TranslatorInterface
      */
     public function translate($string)
     {
-        return $string;
+        $args = func_get_args();
+        $translated = array_shift($args);
+        $extraParams = $args;
+        if (count($extraParams)>0)
+        {
+            $translated = vsprintf($translated, $extraParams);
+        }
+
+        return $translated;
     }
 }
