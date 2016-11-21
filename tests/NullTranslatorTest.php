@@ -12,5 +12,11 @@ class NullTranslatorTest extends \PHPUnit_Framework_TestCase
         $string = 'Hello!';
         $translator = new NullTranslator();
         $this->assertEquals($string, $translator->translate($string));
+
+        $string = 'Hello %s!';
+        $translator = new NullTranslator();
+        $this->assertEquals('Hello world!', $translator->translate($string, 'world'));
+
+
     }
 }
