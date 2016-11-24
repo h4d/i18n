@@ -1,7 +1,6 @@
 <?php
 
 namespace H4D\I18n\Tests\Unit;
-require_once __DIR__.'/PrivateAccessTrait.php';
 
 use H4D\I18n\DateDecorator;
 

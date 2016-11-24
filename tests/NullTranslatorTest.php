@@ -3,7 +3,6 @@
 namespace H4D\I18n\Tests\Unit;
 use H4D\I18n\NullTranslator;
 
-require_once __DIR__ . '/PrivateAccessTrait.php';
 
 class NullTranslatorTest extends \PHPUnit_Framework_TestCase
 {
