@@ -28,12 +28,21 @@ class TranslatorTest extends \PHPUnit_Framework_TestCase
 
     public function test_translate_withGettextAdapter_returnsProperString()
     {
-        $options = [GettextAdapter::OPTION_TRANSLATIONS_DIRECTORY=> __DIR__ . '/../samples/data',
-                    GettextAdapter::OPTION_TRANSLATIONS_DOMAIN => 'test'];
-        $adapter = new GettextAdapter('es_ES.UTF-8', $options);
-        $translator = new Translator($adapter);
-        $this->assertEquals('Nooo', $translator->translate('Nope'));
-        $this->assertEquals('¡Hola xxx!', $translator->translate('Hello %s!', 'xxx'));
+        if (extension_loaded('gettext'))
+        {
+            $options = [GettextAdapter::OPTION_TRANSLATIONS_DIRECTORY=> __DIR__ . '/../samples/data',
+                        GettextAdapter::OPTION_TRANSLATIONS_DOMAIN => 'test'];
+            $adapter = new GettextAdapter('es_ES.UTF-8', $options);
+            $translator = new Translator($adapter);
+            $this->assertEquals('Nooo', $translator->translate('Nope'));
+            $this->assertEquals('¡Hola xxx!', $translator->translate('Hello %s!', 'xxx'));
+        }
+        else
+        {
+            $this->markTestSkipped(
+                'The gettext extension is not available..'
+            );
+        }
     }
 
 
