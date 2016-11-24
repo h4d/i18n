@@ -1,4 +1,8 @@
 language: php
+
+before_install:
+  - sudo apt-get update && sudo apt-get --reinstall install -qq language-pack-en language-pack-es
+
 php:
   - '5.5'
   - '5.6'
